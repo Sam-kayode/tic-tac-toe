@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NextPlayer from "./next-player";
 import Square from "./square";
 
 const Board = () => {
@@ -7,13 +8,17 @@ const Board = () => {
   const [xIsNext, setXIsNext] = useState(false);
 
   const handleClick = (index: number) => {
+    if (squares[index]) return;
+
     const squaresCopy = [...squares];
-    squaresCopy[index] = xIsNext ? "O" : "X";
+
+    squaresCopy[index] = xIsNext ? "X" : "O";
     setXIsNext(!xIsNext);
     setSquares(squaresCopy);
+    calculateWinner(squares);
   };
 
-  const calculateWinner = (squares: [string[]]) => {
+  const calculateWinner = (squares: string[]) => {
     const calculateDraw = squares.every((square) => square != null);
     const lines = [
       [0, 1, 2],
@@ -38,11 +43,14 @@ const Board = () => {
   };
 
   return (
-    <div className="board">
-      {squares.map((square: string, index) => {
-        return <Square value={square} onClick={() => handleClick(index)} />;
-      })}
-    </div>
+    <>
+      <NextPlayer player={xIsNext ? "X" : "o"} />
+      <div className="board">
+        {squares.map((square: string, index) => {
+          return <Square value={square} onClick={() => handleClick(index)} />;
+        })}
+      </div>
+    </>
   );
 };
 

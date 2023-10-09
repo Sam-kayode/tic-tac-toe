@@ -1,7 +1,7 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
-  --background: white;
+  --background: #161724;
   --text-primary: black;
   --text-secondary: royalblue;
   --accent: purple;
@@ -24,6 +24,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background:var(--background)
 }
 
 .board {
