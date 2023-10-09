@@ -1,9 +1,9 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
-  --background: #161724;
-  --text-primary: black;
-  --text-secondary: royalblue;
+  --background: #e5e5e5;
+  --text-primary: #14213d;
+  --text-secondary: #fca311;
   --accent: purple;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,11 +20,12 @@
 
 body {
   margin: 0;
+  font-family: "M PLUS Rounded 1c", sans-serif;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background:var(--background)
+  background: var(--background);
 }
 
 .board {
@@ -37,4 +38,19 @@ body {
   height: 100px;
   width: 100px;
   border: none;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 70px;
+  line-height: 70px;
+}
+
+.player {
+  &-x {
+    @extend .square;
+    color: var(--text-secondary);
+  }
+
+  &-o {
+    @extend .square;
+    color: var(--text-primary);
+  }
 }
