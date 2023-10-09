@@ -30,7 +30,7 @@ const Board = () => {
       if (squares[a] === squares[b] && squares[b] === squares[c]) {
         return squares[a];
       } else if (calculateDraw) {
-        return "draw";
+        return "tie";
       } else {
         return null;
       }
