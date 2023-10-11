@@ -48,6 +48,15 @@ body {
   cursor: pointer;
 }
 
+.outcome{
+  position:fixed;
+  width:100vw;
+  height:100vh;
+  background-color:rgba(4, 4, 64, 0.682);
+  top:0;
+  left:0;
+}
+
 .player {
   &-x {
     @extend .square;

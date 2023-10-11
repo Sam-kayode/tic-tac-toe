@@ -1,6 +1,6 @@
 const Outcome = () => {
   return (
-    <div className="">
+    <div className="outcome">
       <p>YOU WON!</p>
       <h1>
         {" "}
