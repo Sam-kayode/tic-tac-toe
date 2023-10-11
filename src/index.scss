@@ -2,8 +2,11 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   --background: #e5e5e5;
+  --background-primary: #fca311;
+  --background-secondary: #14213d;
   --text-primary: #14213d;
   --text-secondary: #fca311;
+  --text-light: #ffffff;
   --accent: purple;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -76,5 +79,21 @@ body {
   &-o {
     @extend .square;
     color: var(--text-primary);
+  }
+}
+
+.button {
+  border: none;
+  padding: 10px 20px;
+  margin: 0px 5px;
+  border-radius: 5px;
+
+  &--primary {
+    background: var(--background-primary);
+  }
+
+  &--secondary {
+    background: var(--background-secondary);
+    color: var(--text-light);
   }
 }

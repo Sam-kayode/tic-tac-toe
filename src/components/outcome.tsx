@@ -15,7 +15,7 @@ const Outcome = (props: { outcome: string | null | undefined }) => {
               <span>{props.outcome}</span> WINS THIS ROUND
             </h1>
             <BaseButton
-              className=""
+              className="button--primary"
               onClick={() => {
                 handleClick();
               }}
@@ -23,7 +23,7 @@ const Outcome = (props: { outcome: string | null | undefined }) => {
               lorem
             </BaseButton>
             <BaseButton
-              className=""
+              className="button--secondary"
               onClick={() => {
                 console.log("click");
               }}
