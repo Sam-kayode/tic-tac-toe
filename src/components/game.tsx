@@ -1,8 +1,12 @@
 import Board from "./board"
+import Outcome from "./outcome"
 
 const Game = () => {
   return (
-    <div><Board></Board></div>
+    <div>
+      <Board></Board>
+      <Outcome/>
+    </div>
   )
 }
 

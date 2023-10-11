@@ -8,7 +8,7 @@ const Board = () => {
   const [xIsNext, setXIsNext] = useState(false);
 
   const handleClick = (index: number) => {
-    if (squares[index]) return;
+    if (squares[index] ) return;
 
     const squaresCopy = [...squares];
 
@@ -19,7 +19,6 @@ const Board = () => {
   };
 
   const calculateWinner = (squares: string[]) => {
-    const calculateDraw = squares.every((square) => square != null);
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -33,21 +32,27 @@ const Board = () => {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (squares[a] === squares[b] && squares[b] === squares[c]) {
-        return squares[a];
-      } else if (calculateDraw) {
-        return "tie";
+        return squares[a] + "wins";
       } else {
         return null;
       }
     }
   };
 
+  // const calculateDraw = squares.every((square) => square != null);
+
   return (
     <>
       <NextPlayer player={xIsNext ? "X" : "o"} />
       <div className="board">
         {squares.map((square: string, index) => {
-          return <Square value={square} onClick={() => handleClick(index)} />;
+          return (
+            <Square
+              value={square}
+              onClick={() => handleClick(index)}
+              key={index}
+            />
+          );
         })}
       </div>
     </>

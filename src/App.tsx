@@ -1,13 +1,14 @@
-import './App.css'
-import Game from './components/game'
+import "./App.css";
+import Game from "./components/game";
+import Navbar from "./components/navbar";
 
 function App() {
-
   return (
     <>
-      <Game/>
+      <Navbar />
+      <Game />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
