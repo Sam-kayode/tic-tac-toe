@@ -1,4 +1,4 @@
-import BaseButton from "./button";
+import BaseButton from "../form/button";
 
 const Outcome = (props: { outcome: string | null | undefined }) => {
   const handleClick = () => {
@@ -7,7 +7,7 @@ const Outcome = (props: { outcome: string | null | undefined }) => {
 
   return (
     <>
-      {!props.outcome && (
+      {props.outcome && (
         <div className="outcome">
           <div className="result">
             <p>YOU WON!</p>
@@ -20,7 +20,7 @@ const Outcome = (props: { outcome: string | null | undefined }) => {
                 handleClick();
               }}
             >
-              lorem
+                QUIT
             </BaseButton>
             <BaseButton
               className="button--secondary"
@@ -28,7 +28,7 @@ const Outcome = (props: { outcome: string | null | undefined }) => {
                 console.log("click");
               }}
             >
-              lorem
+              NEXT ROUND
             </BaseButton>
           </div>
         </div>

@@ -1,5 +1,4 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   --background: #e5e5e5;
   --background-primary: #fca311;
@@ -20,13 +19,15 @@
   --text-secondary: grey;
   --accent: darkred;
 }
+* {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
 
 body {
   margin: 0;
   font-family: "M PLUS Rounded 1c", sans-serif;
   display: flex;
   place-items: center;
-  min-width: 320px;
   min-height: 100vh;
   background: var(--background);
 }
@@ -87,7 +88,8 @@ body {
   padding: 10px 20px;
   margin: 0px 5px;
   border-radius: 5px;
-
+  font-weight: 300;
+  cursor: pointer;
   &--primary {
     background: var(--background-primary);
   }
@@ -95,5 +97,23 @@ body {
   &--secondary {
     background: var(--background-secondary);
     color: var(--text-light);
+  }
+}
+
+.top-nav {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  text-align: left;
+  padding:10px;
+
+  .x {
+    font-size: 30px;
+    color: #14213d;
+  }
+  .o {
+    font-size: 30px;
+    color: #fca311;
   }
 }

@@ -19,7 +19,7 @@ const Board = (props: {
 
   return (
     <>
-      <NextPlayer player={props.xIsNext ? "X" : "o"} />
+      <NextPlayer player={props.xIsNext ? "X" : "O"} />
       <div className="board">
         {props.currentSquares.map((square: string, index) => {
           return (

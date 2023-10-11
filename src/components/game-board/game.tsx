@@ -5,7 +5,7 @@ import Outcome from "./outcome";
 const Game = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
-  const [xIsNext, setXIsNext] = useState(false);
+  const [xIsNext, setXIsNext] = useState(true);
 
   const handlePlay = (squares: string[]) => {
     setSquares(squares);
@@ -35,7 +35,7 @@ const Game = () => {
   };
 
   return (
-    <div>
+    <div className="game">
       <Board
         currentSquares={squares}
         xIsNext={xIsNext}
