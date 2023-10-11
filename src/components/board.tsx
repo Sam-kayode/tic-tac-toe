@@ -1,51 +1,27 @@
-import { useState } from "react";
 import NextPlayer from "./next-player";
 import Square from "./square";
 
-const Board = () => {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-
-  const [xIsNext, setXIsNext] = useState(false);
-
+const Board = (props: {
+  xIsNext: boolean;
+  currentSquares: string[];
+  onPlay: (a: string[]) => void;
+}) => {
   const handleClick = (index: number) => {
-    if (squares[index] ) return;
+    if (props.currentSquares[index]) return;
 
-    const squaresCopy = [...squares];
+    const squaresCopy = [...props.currentSquares];
 
-    squaresCopy[index] = xIsNext ? "X" : "O";
-    setXIsNext(!xIsNext);
-    setSquares(squaresCopy);
-    calculateWinner(squares);
-  };
-
-  const calculateWinner = (squares: string[]) => {
-    const lines = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
-    for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i];
-      if (squares[a] === squares[b] && squares[b] === squares[c]) {
-        return squares[a] + "wins";
-      } else {
-        return null;
-      }
-    }
+    squaresCopy[index] = props.xIsNext ? "X" : "O";
+    props.onPlay(squaresCopy);
   };
 
   // const calculateDraw = squares.every((square) => square != null);
 
   return (
     <>
-      <NextPlayer player={xIsNext ? "X" : "o"} />
+      <NextPlayer player={props.xIsNext ? "X" : "o"} />
       <div className="board">
-        {squares.map((square: string, index) => {
+        {props.currentSquares.map((square: string, index) => {
           return (
             <Square
               value={square}

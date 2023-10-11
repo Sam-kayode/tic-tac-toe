@@ -48,13 +48,23 @@ body {
   cursor: pointer;
 }
 
-.outcome{
-  position:fixed;
-  width:100vw;
-  height:100vh;
-  background-color:rgba(4, 4, 64, 0.682);
-  top:0;
-  left:0;
+.outcome {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(4, 4, 64, 0.4);
+  top: 0;
+  left: 0;
+
+  .result {
+    height: fit-content;
+    background-color: var(--background);
+    padding: 20px 30px;
+    width: 60%;
+    border-radius: 10px;
+  }
 }
 
 .player {

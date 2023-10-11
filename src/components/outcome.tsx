@@ -1,12 +1,17 @@
-const Outcome = () => {
+const Outcome = (props: { outcome: string | null | undefined }) => {
   return (
-    <div className="outcome">
-      <p>YOU WON!</p>
-      <h1>
-        {" "}
-        <span>X</span> TAKES THE ROUND
-      </h1>
-    </div>
+    <>
+      {props.outcome && (
+        <div className="outcome">
+          <div className="result">
+            <p>YOU WON!</p>
+            <h1>
+              <span>{props.outcome}</span> WINS THIS ROUND
+            </h1>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
