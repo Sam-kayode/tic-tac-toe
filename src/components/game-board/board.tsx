@@ -1,3 +1,4 @@
+import BaseButton from "../form/button";
 import NextPlayer from "./next-player";
 import Square from "./square";
 
@@ -15,11 +16,15 @@ const Board = (props: {
     props.onPlay(squaresCopy);
   };
 
-  // const calculateDraw = squares.every((square) => square != null);
-
   return (
     <>
-      <NextPlayer player={props.xIsNext ? "X" : "O"} />
+      <div className="game-info">
+        <BaseButton className="button--primary replay" onClick={() => {}}>
+          &#x21bb;
+        </BaseButton>
+        <NextPlayer player={props.xIsNext ? "X" : "O"} />
+      </div>
+
       <div className="board">
         {props.currentSquares.map((square: string, index) => {
           return (

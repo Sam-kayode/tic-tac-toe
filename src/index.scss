@@ -52,6 +52,30 @@ body {
   cursor: pointer;
 }
 
+.next-player {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 5px 15px;
+  width: fit-content;
+  -webkit-box-shadow: 0px 4px 0px 0px rgba(207, 207, 207, 1);
+  -moz-box-shadow: 0px 4px 0px 0px rgba(207, 207, 207, 1);
+  box-shadow: 0px 4px 0px 0px rgba(207, 207, 207, 1);
+  background: var(--text-light);
+  text-align:center;
+}
+
+.replay{
+  font-size:25px;
+  height:35px;
+  padding:0 5px !important; 
+}
+
+.game-info{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:10px;
+}
+
 .outcome {
   position: fixed;
   display: grid;
@@ -86,7 +110,7 @@ body {
 .button {
   border: none;
   padding: 10px 20px;
-  margin: 0px 5px;
+  margin-right:10px;
   border-radius: 5px;
   font-weight: 300;
   cursor: pointer;
@@ -106,7 +130,7 @@ body {
   top: 0;
   left: 0;
   text-align: left;
-  padding:10px;
+  padding: 10px;
 
   .x {
     font-size: 30px;
