@@ -19,6 +19,7 @@
   --text-secondary: grey;
   --accent: darkred;
 }
+
 * {
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
@@ -61,19 +62,19 @@ body {
   -moz-box-shadow: 0px 4px 0px 0px rgba(207, 207, 207, 1);
   box-shadow: 0px 4px 0px 0px rgba(207, 207, 207, 1);
   background: var(--text-light);
-  text-align:center;
+  text-align: center;
 }
 
-.replay{
-  font-size:25px;
-  height:35px;
-  padding:0 5px !important; 
+.replay {
+  font-size: 25px;
+  height: 35px;
+  padding: 0 5px !important;
 }
 
-.game-info{
+.game-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .outcome {
@@ -110,7 +111,7 @@ body {
 .button {
   border: none;
   padding: 10px 20px;
-  margin-right:10px;
+  margin-right: 10px;
   border-radius: 5px;
   font-weight: 300;
   cursor: pointer;
