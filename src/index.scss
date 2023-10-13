@@ -29,6 +29,7 @@ body {
   font-family: "M PLUS Rounded 1c", sans-serif;
   display: flex;
   place-items: center;
+  place-content: center;
   min-height: 100vh;
   background: var(--background);
 }
