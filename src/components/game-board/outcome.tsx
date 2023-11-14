@@ -1,10 +1,12 @@
 import BaseButton from "../form/button";
 
-const Outcome = (props: {
-  squares: string[];
-}) => {
-  const handleClick = () => {
-    console.log("rem");
+const Outcome = (props: { squares: string[]; onClick: () => void }) => {
+  const handleClick = (command: string) => {
+    if (command == "quit") {
+      console.log("quit");
+    } else {
+      props.onClick()
+    }
   };
 
   const calculateWinner = () => {
@@ -29,7 +31,7 @@ const Outcome = (props: {
     return null;
   };
 
-  const winner = calculateWinner(); 
+  const winner = calculateWinner();
 
   return (
     <>
@@ -43,7 +45,7 @@ const Outcome = (props: {
             <BaseButton
               className="button--primary"
               onClick={() => {
-                handleClick();
+                handleClick("quit");
               }}
             >
               QUIT
@@ -51,7 +53,7 @@ const Outcome = (props: {
             <BaseButton
               className="button--secondary"
               onClick={() => {
-                console.log("click");
+                handleClick("nextRound");
               }}
             >
               NEXT ROUND

@@ -12,8 +12,6 @@ const Game = () => {
     setXIsNext(!xIsNext);
   };
 
-
-
   return (
     <div className="game">
       <Board
@@ -21,7 +19,10 @@ const Game = () => {
         xIsNext={xIsNext}
         onPlay={handlePlay}
       ></Board>
-      <Outcome squares={squares}/>
+      <Outcome
+        squares={squares}
+        onClick={() => setSquares(Array(9).fill(null))}
+      />
     </div>
   );
 };
